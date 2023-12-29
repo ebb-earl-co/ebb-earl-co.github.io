@@ -15,25 +15,33 @@ In the image above, the first four sliders are in position "Right" and the botto
 The two sides of the puzzle box are **not** unlocked by the same combination. This is not obvious, and it not advertised by the product description, but after having solved it, it turns out to be the case. Moreover, the two sides with sliders are identifiable as only one of the sides with sliders has an indented circle above the sliders: visible in the image above.
 
 ## The Math(s)
-The set of positions for a given slider is $S=\{\text{Left, Center, Right}\}$. The **size** of $S$, a.k.a. the cardinality of $S$, is three, as there are three elements in $S$: the notation is $|S| = 3$.
+The set of positions for a given slider is $S=[\text{Left, Center, Right}]$. The **size** of $S$, a.k.a. the cardinality of $S$, is three, as there are three elements in $S$: the notation is $|S| = 3$.
 Given that:
   - The sliders have the same set of positions, $S$,
   - The sliders' positions are independent of one another,
   - and that the sides' sliders are independent of each other,
   
 there are the following number of solution configurations possible *for the side with a punched-in circle*:
-$\begin{aligned} |\{\text{Top slider positions}\}|\cdot |\{\text{Second slider positions}\}| \cdot |\{\text{Third slider positions}\}| \cdot |\{\text{Fourth slider positions}\}| \cdot |\{\text{Fifth slider positions}\}| &= \newline |S| \cdot |S| \cdot |S| \cdot |S| \cdot |S| &= \newline 3\cdot 3\cdot 3\cdot 3\cdot 3 &= \newline 3^5 &= 243 \end{aligned}$
 
-The same is true for the opposite side of the puzzle box, the slider side **without** the punched-in circle. However, this does **not** simply double the amount of possible configurations, as the two sides are independent; rather, the number of possible configurations is analagous to multiplying the number of configurations of the sliders by each other since those are independent: the two sides' number of slider configurations are multiplied by each other, giving us
-$$\text{Total number of configurations} = 3^5 \cdot 3^5 = (3^5)^2 = 3^{10} = 59,049$$
-However, we know that, for our puzzle box, the two sides do not have the same unlocking configuration, so there is a non-zero amount of matching configurations in the two groups of 243 configurations. How many are there? Exactly as many as the amount of configurations for a given side, $3^5 = 243$! Therefore, **for this puzzle box**, the total number of configurations possible to unlock it is $$\text{Puzzle box slider configurations} = 3^{10} - 3^{5} = 3^5\cdot(3^5 -1) := C = 58,806$$
+$$ |\{\text{Top slider positions}\}|\cdot |\{\text{Second slider positions}\}| \cdot |\{\text{Third slider positions}\}| \cdot |\{\text{Fourth slider positions}\}| \cdot |\{\text{Fifth slider positions}\}| = $$
+
+$$|S| \cdot |S| \cdot |S| \cdot |S| \cdot |S| = $$
+
+$$ 3\cdot 3\cdot 3\cdot 3\cdot 3 =$$
+
+$$ 3^5 = 243$$
+
+The same is true for the opposite side of the puzzle box, the slider side **without** the punched-in circle. However, this does **not** simply halve the amount of possible configurations, as the two sides are independent; rather, the number of possible configurations is analagous to multiplying the number of configurations of the sliders by each other since those are independent: the two sides' number of slider configurations are multiplied by each other, giving us
+$$\text{Total number of configurations} = 3^5 \cdot 3^5 = (3^5)^2 = 3^{10} = 59049$$
+However, we know that, for our puzzle box, the two sides do not have the same unlocking configuration, so there is a non-zero amount of matching configurations in the two groups of 243 configurations. How many are there? Exactly as many as the amount of configurations for a given side, $3^5 = 243$! Therefore, **for this puzzle box**, the total number of configurations possible to unlock it is $$\text{Puzzle box slider configurations} = 3^{10} - 3^{5} = 3^5\cdot(3^5 -1) := C = 58806$$
 *N.b. the $:=$ symbol means that a variable (in this case $C$) is being **defined** by the previous expression, or **initialized** to have a value.
 ## The Probability
 The probability of naïvely hitting the exact configuration to unlock the box on the first try is $\frac{1}{3^{10} - 3^5} = \frac{1}{58,806} = 0.00001701$, which is about 17 in a million. This is what makes for such a good puzzle! Unless you don't like brute force algorithms, in which case all I can say is that the world's bicycle locks thank you for your lack of persistence!
 ## The Code
 Writing anything fifty-eight thousand eight hundred six times would be a chore, nevermind listing subtle repetitions of the same three words. So, let's enlist the help of a computer. The following Python code will set up the objects discussed so far, and verify the counts and numbers claimed. There is no automation for solving the puzzle box in meat space, but running the provided code as one tries different combinations is an excellent companion to the solving process.
 ```python
->>> top_slider_configurations, second_slider_configurations, third_slider_configurations, fourth_slider_configurations, fifth_slider_configurations = [("Left", "Center", "Right")] * 5
+>>> top_slider_configurations, second_slider_configurations, third_slider_configurations, \
+    fourth_slider_configurations, fifth_slider_configurations = [("Left", "Center", "Right")] * 5
 >>> top_slider_configurations
 ('Left', 'Center', 'Right')
 >>> number_of_puzzle_box_side_configurations: int = 0
