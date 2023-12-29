@@ -83,7 +83,7 @@ meaning that the slider side with the inlaid circle would set all sliders to the
 ### Alternative strategy
 It is disheartening to think about whittling down a list of almost sixty thousand options, especially as checking each option requires physical manhandling of the puzzle box. Also, practically, it is difficult to hold 10 different sliding pieces of wood in the correct position while pulling on the top of the box.
 
-So, we can split the problem into finding the correct configuration for each side of the puzzle in series. When I attemped the puzzle, I started with the side without the inlaid circle, but it is immaterial which is solved first and which second. In this situation, the strategy is the same, except that only 243 options are gone through: psychologically, this is somehow much more palatable. In code:
+So, we can split the problem into finding the correct configuration for each side of the puzzle in series. When I attempted the puzzle, I started with the side without the inlaid circle, but it is immaterial which is solved first and which second. In this situation, the strategy is the same, except that only 243 options are gone through: psychologically, this is somehow much more palatable. In code:
 ```python
 >>> circle_side_configurations, plain_side_configurations = (puzzle_box_side_configurations, puzzle_box_side_configurations)
 >>> circle_side_configurations.pop()
