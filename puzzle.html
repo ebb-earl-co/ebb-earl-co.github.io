@@ -1,0 +1,87 @@
+<pre>&lt;h1&gt;&lt;a href=&quot;https://youtu.be/1giVzxyoclE?t=134&quot;&gt;What’s In the Box&lt;/a&gt;!?&lt;/h1&gt;
+&lt;p&gt;For Christmas, I was gifted a lovely alternative to wasteful wrapping paper that just ends up in the landfill: the &lt;a href=&quot;https://www.amazon.com/Secret-Puzzles-Treasure-Compartment-Mystery/dp/B097RBFYC6&quot;&gt;BSIRI Jigsaw Safe Box&lt;/a&gt;. As can be seen in the image below, it features two plain sides, and two sides with five sliders each:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://m.media-amazon.com/images/I/71tm37PRoKL._AC_SL1500_.jpg&quot; alt=&quot;BSIRI Jigsaw Safe Box&quot; width=&quot;480&quot; height=&quot;480&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;The Problem Space&lt;/h2&gt;
+&lt;p&gt;In order to open the box and get to the goody(ies) inside, each of the sliders needs to be in the proper position, exactly like the tumblers in a standard key-opened lock. There are three positions for each shelf:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Slid to the left; &amp;quot;Left&amp;quot;&lt;/li&gt;
+&lt;li&gt;Unmoved in the center; &amp;quot;Center&amp;quot;&lt;/li&gt;
+&lt;li&gt;Slid to the right; &amp;quot;Right&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In the image above, the first four sliders are in position &amp;quot;Right&amp;quot; and the bottom shelf is in position &amp;quot;Center&amp;quot;: this is one of the possible solutions to unlock this side of the puzzle box (spoiler: it is not the solution for this side.)&lt;/p&gt;
+&lt;h3&gt;Antisymmetry&lt;/h3&gt;
+&lt;p&gt;The two sides of the puzzle box are &lt;strong&gt;not&lt;/strong&gt; unlocked by the same combination. This is not obvious, and it not advertised by the product description, but after having solved it, it turns out to be the case. Moreover, the two sides with sliders are identifiable as only one of the sides with sliders has an indented circle above the sliders: visible in the image above.&lt;/p&gt;
+&lt;h2&gt;The Math(s)&lt;/h2&gt;
+&lt;p&gt;The set of positions for a given slider is &lt;img src=&quot;https://i.upmath.me/svg/S%3D%5C%7B%5Ctext%7BLeft%2C%20Center%2C%20Right%7D%5C%7D&quot; alt=&quot;S=\{\text{Left, Center, Right}\}&quot; /&gt;. The &lt;strong&gt;size&lt;/strong&gt; of &lt;img src=&quot;https://i.upmath.me/svg/S&quot; alt=&quot;S&quot; /&gt;, a.k.a. the cardinality of &lt;img src=&quot;https://i.upmath.me/svg/S&quot; alt=&quot;S&quot; /&gt;, is three, as there are three elements in &lt;img src=&quot;https://i.upmath.me/svg/S&quot; alt=&quot;S&quot; /&gt;: the notation is &lt;img src=&quot;https://i.upmath.me/svg/%7CS%7C%20%3D%203&quot; alt=&quot;|S| = 3&quot; /&gt;.
+Given that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The sliders have the same set of positions, &lt;img src=&quot;https://i.upmath.me/svg/S&quot; alt=&quot;S&quot; /&gt;,&lt;/li&gt;
+&lt;li&gt;The sliders’ positions are independent of one another,&lt;/li&gt;
+&lt;li&gt;and that the sides’ sliders are independent of each other,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;there are the following number of solution configurations possible &lt;em&gt;for the side with an inlaid circle&lt;/em&gt;:
+&lt;img src=&quot;https://i.upmath.me/svg/%7C%5C%7B%5Ctext%7BTop%20slider%20positions%7D%5C%7D%7C%5Ccdot%20%7C%5C%7B%5Ctext%7BSecond%20slider%20positions%7D%5C%7D%7C%20%5Ccdot%20%7C%5C%7B%5Ctext%7BThird%20slider%20positions%7D%5C%7D%7C%20%5Ccdot%20%7C%5C%7B%5Ctext%7BFourth%20slider%20positions%7D%5C%7D%7C%20%5Ccdot%20%7C%5C%7B%5Ctext%7BFifth%20slider%20positions%7D%5C%7D%7C%20%3D&quot; alt=&quot;|\{\text{Top slider positions}\}|\cdot |\{\text{Second slider positions}\}| \cdot |\{\text{Third slider positions}\}| \cdot |\{\text{Fourth slider positions}\}| \cdot |\{\text{Fifth slider positions}\}| =&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img align=&quot;center&quot; src=&quot;https://i.upmath.me/svg/%7CS%7C%20%5Ccdot%20%7CS%7C%20%5Ccdot%20%7CS%7C%20%5Ccdot%20%7CS%7C%20%5Ccdot%20%7CS%7C%20%3D%20&quot; alt=&quot;|S| \cdot |S| \cdot |S| \cdot |S| \cdot |S| = &quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img align=&quot;center&quot; src=&quot;https://i.upmath.me/svg/3%5Ccdot%203%5Ccdot%203%5Ccdot%203%5Ccdot%203%20%3D&quot; alt=&quot;3\cdot 3\cdot 3\cdot 3\cdot 3 =&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img align=&quot;center&quot; src=&quot;https://i.upmath.me/svg/3%5E5%20%26%3D%20243&quot; alt=&quot;3^5 &amp;amp;= 243&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The same is true for the opposite side of the puzzle box, the slider side &lt;strong&gt;without&lt;/strong&gt; the punched-in circle. However, this does &lt;strong&gt;not&lt;/strong&gt; simply double the amount of possible configurations, as the two sides are independent; rather, the number of possible configurations is analagous to multiplying the number of configurations of the sliders by each other since those are independent: the two sides’ number of slider configurations are multiplied by each other, giving us
+&lt;img src=&quot;https://i.upmath.me/svg/%5Ctext%7BTotal%20number%20of%20configurations%7D%20%3D%203%5E5%20%5Ccdot%203%5E5%20%3D%20(3%5E5)%5E2%20%3D%203%5E%7B10%7D%20%3D%2059%2C049&quot; alt=&quot;\text{Total number of configurations} = 3^5 \cdot 3^5 = (3^5)^2 = 3^{10} = 59,049&quot; /&gt;
+However, we know that, for our puzzle box, the two sides do not have the same unlocking configuration, so there is a non-zero amount of matching configurations in the two groups of 243 configurations. How many are there? Exactly as many as the amount of configurations for a given side, $3^5 = 243$! Therefore, &lt;strong&gt;for this puzzle box&lt;/strong&gt;, the total number of configurations possible to unlock it is&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img align=&quot;center&quot; src=&quot;https://i.upmath.me/svg/%5Ctext%7BPuzzle%20box%20slider%20configurations%7D%20%3D%203%5E%7B10%7D%20-%203%5E%7B5%7D%20%3D%203%5E5%5Ccdot(3%5E5%20-1)%20%3A%3D%20C%20%3D%2058%2C806&quot; alt=&quot;\text{Puzzle box slider configurations} = 3^{10} - 3^{5} = 3^5\cdot(3^5 -1) := C = 58,806&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;*N.b. the &lt;img src=&quot;https://i.upmath.me/svg/%3A%3D&quot; alt=&quot;:=&quot; /&gt; symbol means that a variable (in this case &lt;img src=&quot;https://i.upmath.me/svg/C&quot; alt=&quot;C&quot; /&gt;) is being &lt;strong&gt;defined&lt;/strong&gt; by the previous expression, or &lt;strong&gt;initialized&lt;/strong&gt; to have a value.&lt;/p&gt;
+&lt;h2&gt;The Probability&lt;/h2&gt;
+&lt;p&gt;The probability of naïvely hitting the exact configuration to unlock the box on the first try is &lt;img src=&quot;https://i.upmath.me/svg/%5Cfrac%7B1%7D%7B3%5E%7B10%7D%20-%203%5E5%7D%20%3D%20%5Cfrac%7B1%7D%7B58%2C806%7D%20%3D%200.00001701&quot; alt=&quot;\frac{1}{3^{10} - 3^5} = \frac{1}{58,806} = 0.00001701&quot; /&gt;, which is about 17 in a million. This is what makes for such a good puzzle! Unless you don’t like brute force algorithms, in which case all I can say is that the world’s bicycle locks thank you for your lack of persistence!&lt;/p&gt;
+&lt;h2&gt;The Code&lt;/h2&gt;
+&lt;p&gt;Writing anything fifty-eight thousand eight hundred six times would be a chore, nevermind listing subtle repetitions of the same three words. So, let’s enlist the help of a computer. The following Python code will set up the objects discussed so far, and verify the counts and numbers claimed. There is no automation for solving the puzzle box in meat space, but running the provided code as one tries different combinations is an excellent companion to the solving process.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; top_slider_configurations, second_slider_configurations, third_slider_configurations, fourth_slider_configurations, fifth_slider_configurations = [(&amp;quot;Left&amp;quot;, &amp;quot;Center&amp;quot;, &amp;quot;Right&amp;quot;)] * 5
+&amp;gt;&amp;gt;&amp;gt; top_slider_configurations
+(&apos;Left&apos;, &apos;Center&apos;, &apos;Right&apos;)
+&amp;gt;&amp;gt;&amp;gt; number_of_puzzle_box_side_configurations: int = 0
+&amp;gt;&amp;gt;&amp;gt; for _ in top_slider_configurations:
+        for _ in second_slider_configurations:
+            for _ in third_slider_configurations:
+                for _ in fourth_slider_configurations:
+                    for _ in fourth_slider_configurations:
+                        number_of_puzzle_box_side_configurations += 1
+else:
+    print(number_of_puzzle_box_side_configurations)
+...
+243
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To not be overly verbose, we will use the &lt;code&gt;product()&lt;/code&gt; function from the Python standard library module &lt;code&gt;itertools&lt;/code&gt;: it creates the giant array (that we will call &lt;code&gt;puzzle_box_side_configurations&lt;/code&gt;) that is belied by the code above: every collection of a configuration from each of the slider configurations. From &lt;em&gt;that&lt;/em&gt; collection, we make an &lt;code&gt;itertools.product&lt;/code&gt; object out of two copies of &lt;code&gt;puzzle_box_side_configurations&lt;/code&gt;. Lastly, we filter out of that collection the configurations that are the same, and we are left with an object that has a two-tuple of puzzle box side configurations for each of the 58,806 possible configurations.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; import itertools
+&amp;gt;&amp;gt;&amp;gt; puzzle_box_side_configurations = list(itertools.product(top_slider_configurations, second_slider_configurations, third_slider_configurations, fourth_slider_configurations, fifth_slider_configurations))
+&amp;gt;&amp;gt;&amp;gt; len(puzzle_box_side_configurations)
+243
+&amp;gt;&amp;gt;&amp;gt; total_configurations = itertools.product(puzzle_box_side_configurations, puzzle_box_side_configurations)
+&amp;gt;&amp;gt;&amp;gt; puzzle_box_configurations = list(config for config in total_configurations if config[0] != config[1])
+&amp;gt;&amp;gt;&amp;gt; C: int = len(puzzle_box_configurations)
+&amp;gt;&amp;gt;&amp;gt; C
+58806
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;The Strategy&lt;/h2&gt;
+&lt;p&gt;To best keep track of what one has and has not tried, use the &lt;code&gt;puzzle_box_configurations&lt;/code&gt; object in a Python REPL: as &lt;code&gt;puzzle_box_configurations&lt;/code&gt; is a Python &lt;code&gt;list&lt;/code&gt; object, it has a &lt;code&gt;.pop()&lt;/code&gt; method which discards its last element. So, the algorithm becomes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;execute &lt;code&gt;puzzle_box_configurations.pop()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Read that configuration, set the physical puzzle box to that configuration, and try to open the box by gently pulling&lt;/li&gt;
+&lt;li&gt;If the puzzle box opens, great! That’s problem solved. If not, then go back to step &lt;code&gt;1.&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;E.g.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; puzzle_box_configurations.pop()
+((&apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;), (&apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;, &apos;Center&apos;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;meaning that the slider side with the inlaid circle would set all sliders to the right setting; and the reverse side would set all but the bottom slider to the right setting, and its bottom slider to the center setting.&lt;/p&gt;
+&lt;h3&gt;Alternative strategy&lt;/h3&gt;
+&lt;p&gt;It is disheartening to think about whittling down a list of almost sixty thousand options, especially as checking each option requires physical manhandling of the puzzle box. Also, practically, it is difficult to hold 10 different sliding pieces of wood in the correct position while pulling on the top of the box.&lt;/p&gt;
+&lt;p&gt;So, we can split the problem into finding the correct configuration for each side of the puzzle in series. When I attemped the puzzle, I started with the side without the inlaid circle, but it is immaterial which is solved first and which second. In this situation, the strategy is the same, except that only 243 options are gone through: psychologically, this is somehow much more palatable. In code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; circle_side_configurations, plain_side_configurations = (puzzle_box_side_configurations, puzzle_box_side_configurations)
+&amp;gt;&amp;gt;&amp;gt; circle_side_configurations.pop()
+(&apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;)
+&amp;gt;&amp;gt;&amp;gt; # This is not the correct configuration
+&amp;gt;&amp;gt;&amp;gt; circle_side_configurations.pop()
+(&apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;, &apos;Right&apos;, &apos;Center&apos;)
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;This is a very lovely gift: it is constructed well and has a decent amount of space inside of it to store something valuable. I ended up needing somewhere around 100 attempts to solve first the side without the inlaid circle, and then several hundred attempts to solve the other side. So, all said, I lucked out in the problem space! This problem space also gave me a bit better intuition about the enormity of &lt;img src=&quot;https://i.upmath.me/svg/2%5E%7B256%7D&quot; alt=&quot;2^{256}&quot; /&gt;, highlighted in a recent &lt;a href=&quot;https://www.youtube.com/watch?v=X4jpqCu-wlA&quot;&gt;video from 3Blue1Brown&lt;/a&gt;. The problem space of this puzzle box is unimaginably smaller than that of 256-bit encryption, so we should rest assured that various computer operations should be secure for some time to come.&lt;/p&gt;
+&lt;p&gt;In the meantime, happy puzzling.&lt;/p&gt;</pre>
