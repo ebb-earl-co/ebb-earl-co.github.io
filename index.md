@@ -23,17 +23,24 @@ Given that:
   
 there are the following number of solution configurations possible *for the side with a punched-in circle*:
 
-$$ |\{\text{Top slider positions}\}|\cdot |\{\text{Second slider positions}\}| \cdot |\{\text{Third slider positions}\}| \cdot |\{\text{Fourth slider positions}\}| \cdot |\{\text{Fifth slider positions}\}| = $$
-
-$$|S| \cdot |S| \cdot |S| \cdot |S| \cdot |S| = $$
-
-$$ 3\cdot 3\cdot 3\cdot 3\cdot 3 =$$
-
-$$ 3^5 = 243$$
-
+```math
+|\{\text{Top slider positions}\}|\cdot |\{\text{Second slider positions}\}| \cdot |\{\text{Third slider positions}\}| \cdot |\{\text{Fourth slider positions}\}| \cdot |\{\text{Fifth slider positions}\}| =
+```
+```math
+|S| \cdot |S| \cdot |S| \cdot |S| \cdot |S| =
+```
+```math
+3\cdot 3\cdot 3\cdot 3\cdot 3 =
+```
+```math
+3^5 = 243
+```
 The same is true for the opposite side of the puzzle box, the slider side **without** the punched-in circle. However, this does **not** simply halve the amount of possible configurations, as the two sides are independent; rather, the number of possible configurations is analagous to multiplying the number of configurations of the sliders by each other since those are independent: the two sides' number of slider configurations are multiplied by each other, giving us
 $$\text{Total number of configurations} = 3^5 \cdot 3^5 = (3^5)^2 = 3^{10} = 59049$$
-However, we know that, for our puzzle box, the two sides do not have the same unlocking configuration, so there is a non-zero amount of matching configurations in the two groups of 243 configurations. How many are there? Exactly as many as the amount of configurations for a given side, $3^5 = 243$! Therefore, **for this puzzle box**, the total number of configurations possible to unlock it is $$\text{Puzzle box slider configurations} = 3^{10} - 3^{5} = 3^5\cdot(3^5 -1) := C = 58806$$
+However, we know that, for our puzzle box, the two sides do not have the same unlocking configuration, so there is a non-zero amount of matching configurations in the two groups of 243 configurations. How many are there? Exactly as many as the amount of configurations for a given side, $3^5 = 243$! Therefore, **for this puzzle box**, the total number of configurations possible to unlock it is
+```math
+\text{Puzzle box slider configurations} = 3^{10} - 3^{5} = 3^5\cdot(3^5 -1) := C = 58806
+```
 *N.b. the $:=$ symbol means that a variable (in this case $C$) is being **defined** by the previous expression, or **initialized** to have a value.
 ## The Probability
 The probability of naïvely hitting the exact configuration to unlock the box on the first try is $\frac{1}{3^{10} - 3^5} = \frac{1}{58,806} = 0.00001701$, which is about 17 in a million. This is what makes for such a good puzzle! Unless you don't like brute force algorithms, in which case all I can say is that the world's bicycle locks thank you for your lack of persistence!
